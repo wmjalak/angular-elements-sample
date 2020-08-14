@@ -39,22 +39,18 @@ $ npm run publish:elements
 ```
 npm install wc-parma
 ```
-`app.module.ts`:
+### `app.module.ts`:
 
-Add CUSTOM_ELEMENTS_SCHEMA
+Add `CUSTOM_ELEMENTS_SCHEMA` and import the library
 ```
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import 'wc-parma';
 ...
 schemas: [CUSTOM_ELEMENTS_SCHEMA]
 ```
 
-Add import
-```
-import 'wc-parma';
-```
-
-`app.component.html`:
+### `app.component.html`:
 ```
 <wc-parma></wc-parma>
-...
+```
 
