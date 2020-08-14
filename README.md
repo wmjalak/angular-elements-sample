@@ -1,27 +1,60 @@
-# WcApp
+# Web Components with Angular Elements
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+Sample of how to
 
-## Development server
+* build Web Components with Angular Elements
+* publish everything to npm
+* use them in your Angular application
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Development
 
-## Build
+In `app.module.ts` change the `LIBRARY_BUILD` to false:
+```
+export const LIBRARY_BUILD = false;
+```
+Run the application and start development.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Build the Web Components
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+In `app.module.ts` change the `LIBRARY_BUILD` to true:
+```
+export const LIBRARY_BUILD = true;
+```
 
-## Running end-to-end tests
+Build the library
+```
+$ npm run build:library
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Publish to NPM (if needed)
+```
+$ npm run publish:elements
+```
 
-## Further help
+## How to use it in Angular application
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+npm install wc-parma
+```
+`app.module.ts`:
+
+Add CUSTOM_ELEMENTS_SCHEMA
+```
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+...
+schemas: [CUSTOM_ELEMENTS_SCHEMA]
+```
+
+Add import
+```
+import 'wc-parma';
+```
+
+`app.component.html`:
+```
+<wc-parma></wc-parma>
+...
+

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LIBRARY_BUILD } from './app.module';
 
 @Component({
   selector: 'app-root',
